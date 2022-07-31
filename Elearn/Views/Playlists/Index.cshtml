@@ -1,0 +1,56 @@
+﻿@model IEnumerable<Elearn.Models.Playlist>
+
+@{
+    ViewBag.Title = "Index";
+}
+<div class="container">
+    <h2>Courses:</h2>
+
+    <p>
+        @Html.ActionLink("Create New", "Create")
+    </p>
+
+
+
+
+
+
+
+    <div class="row">
+
+        @foreach (var item in Model)
+        {
+          
+                <div class="col-sm-4 col-md-3 col-xs-12">
+                    <a href="playlists/Details/@item.Id">
+                        <div class="card" style="width: 100%">
+
+                            <img src="https://via.placeholder.com/250" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">@Html.DisplayFor(modelItem => item.Name)</h5>
+
+                            </div>
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item">Cras justo odio</li>
+
+                            </ul>
+
+                        </div>
+                    </a>
+
+                </div>
+      
+
+
+
+
+
+
+
+
+
+        }
+
+
+    </div>
+</div>

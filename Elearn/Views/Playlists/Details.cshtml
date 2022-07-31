@@ -1,0 +1,49 @@
+﻿@model Elearn.Models.Playlist
+ 
+
+@{
+    ViewBag.Title = "Details";
+}
+<div class="container">
+    <hr />
+    <h2>Course:  @Html.DisplayFor(model => model.Name) </h2>
+
+    <div>
+       
+
+        <div class="widget">
+            <h3>@Html.DisplayNameFor(model => model.Description): </h3>
+            <p>@Html.DisplayFor(model => model.Description)</p>
+
+        </div>
+
+
+
+    </div>
+    <div class="widget">
+        <h3>Contents:</h3>
+        <ul>
+            @foreach (var lecture in Model.Lectures)
+            {
+
+                <div class="card" style="width: 100%">
+                    <ul class="list-group ">
+
+                        <li> <span class="glyphicon glyphicon-play"></span> 
+                            @Html.ActionLink(@lecture.Title, "Details", "Lectures", new { id = lecture.Id }, null)
+                        </li>
+                    </ul>
+                </div>
+            }
+        </ul>
+
+    </div>
+</div>
+ 
+    
+
+    
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
