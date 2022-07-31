@@ -20,5 +20,9 @@ namespace Elearn.Models
         public string ImageFile { get; set; }
 
         public ICollection<Lecture> Lectures { get; set; }
+
+        public string ApplicationsUserId { get; set; }
+
+        public ApplicationUser ApplicationsUser { get; set; }
     }
 }

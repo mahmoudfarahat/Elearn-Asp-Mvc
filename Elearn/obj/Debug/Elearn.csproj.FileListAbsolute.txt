@@ -53,5 +53,5 @@ C:\Users\mahmoud.farahat\documents\visual studio 2013\Projects\Elearn\Elearn\bin
 C:\Users\mahmoud.farahat\documents\visual studio 2013\Projects\Elearn\Elearn\obj\Debug\Elearn.csprojResolveAssemblyReference.cache
 C:\Users\mahmoud.farahat\documents\visual studio 2013\Projects\Elearn\Elearn\obj\Debug\Elearn.dll
 C:\Users\mahmoud.farahat\documents\visual studio 2013\Projects\Elearn\Elearn\obj\Debug\Elearn.pdb
-C:\Users\mahmoud.farahat\documents\visual studio 2013\Projects\Elearn\Elearn\obj\Debug\Elearn.Migrations.initalModel.resources
+C:\Users\mahmoud.farahat\documents\visual studio 2013\Projects\Elearn\Elearn\obj\Debug\Elearn.Migrations.initalMigration.resources
 C:\Users\mahmoud.farahat\documents\visual studio 2013\Projects\Elearn\Elearn\obj\Debug\Elearn.csproj.GenerateResource.Cache

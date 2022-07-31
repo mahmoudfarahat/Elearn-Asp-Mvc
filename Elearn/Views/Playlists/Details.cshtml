@@ -6,26 +6,34 @@
 }
 <div class="container">
     <hr />
-    <h2>Course:  @Html.DisplayFor(model => model.Name) </h2>
-
-    <div>
-       
+    <div class="text-center courseTitle"  >
+     
+            <h2 >Course:  @Html.DisplayFor(model => model.Name) </h2>
+        
+         
+            <button type="button" class="btn btn-info btn-create"  data-toggle="modal" data-target="#myModal">Add Lecture</button>
+      
+    </div>
+    
 
         <div class="widget">
             <h3>@Html.DisplayNameFor(model => model.Description): </h3>
             <p>@Html.DisplayFor(model => model.Description)</p>
 
+
         </div>
 
 
 
-    </div>
+     
     <div class="widget">
         <h3>Contents:</h3>
         <ul>
+           
+
             @foreach (var lecture in Model.Lectures)
             {
-
+                    
                 <div class="card" style="width: 100%">
                     <ul class="list-group ">
 
@@ -42,8 +50,54 @@
  
     
 
-    
+   
+
+ 
+<div id="myModal" class="modal fade" role="dialog">
+    <div class="modal-dialog" id="modalCotent">
+       
+
+
+
+
+
+
+    </div>
+</div>
+
+
+
 <p>
     @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
     @Html.ActionLink("Back to List", "Index")
 </p>
+
+
+
+@section scripts{
+<script>
+
+ 
+    $(".btn-create").click(function () {
+
+        $.ajax({
+            url: "/Lectures/Create",
+            method: "GET",
+            success: function (result) {
+                $("#modalCotent").html(result);
+                $("#myModal").modal("show")
+            }
+        })
+    })
+
+</script>
+
+
+
+}
+
+
+       
+
+
+ 

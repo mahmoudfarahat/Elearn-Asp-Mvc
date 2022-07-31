@@ -42,9 +42,14 @@ li
 
 .widget {
     position: relative;
-    box-shadow: 0 6px 10px 0 rgb(0 0 0 / 10%);
+    box-shadow: 0 6px 10px 0 rgb(0 ,0, 0 , 10%);
     background-color: #fff;
     padding: 15px;
     border: 1px solid #ddd;
     margin-bottom: 15px;
 }
+      
+      
+ .courseTitle{
+    display:flex;justify-content:space-between;align-items:center
+ }

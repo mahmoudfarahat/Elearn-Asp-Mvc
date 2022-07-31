@@ -25,13 +25,10 @@
                     <a href="playlists/Details/@item.Id">
                         <div class="card" style="width: 100%">
 
-                            <img src="https://via.placeholder.com/250" class="card-img-top" alt="...">
-                            <div class="card-body">
-                                <h5 class="card-title">@Html.DisplayFor(modelItem => item.Name)</h5>
-
-                            </div>
-                            <ul class="list-group list-group-flush">
-                                <li class="list-group-item">Cras justo odio</li>
+                            <img src="~/images/@item.ImageFile" style=" width: 100% " alt="...">
+                            
+                            <ul class="list-group list-group-flush text-center">
+                                <li class="list-group-item">@Html.DisplayFor(modelItem => item.Name)</li>
 
                             </ul>
 

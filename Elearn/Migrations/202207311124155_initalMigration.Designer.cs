@@ -7,13 +7,13 @@ namespace Elearn.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.3-40302")]
-    public sealed partial class initalModel : IMigrationMetadata
+    public sealed partial class initalMigration : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(initalModel));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(initalMigration));
         
         string IMigrationMetadata.Id
         {
-            get { return "202207280947375_initalModel"; }
+            get { return "202207311124155_initalMigration"; }
         }
         
         string IMigrationMetadata.Source

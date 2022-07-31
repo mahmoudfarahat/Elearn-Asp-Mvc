@@ -41,7 +41,8 @@ namespace Elearn.Controllers
         {
             ViewBag.CategoryId = new SelectList(db.Categories, "Id", "Name");
             ViewBag.PlaylistId = new SelectList(db.Playlists, "Id", "Name");
-            return View();
+
+            return PartialView();
         }
 
         // POST: Lectures/Create

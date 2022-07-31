@@ -7,7 +7,8 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using Elearn.Models;
-
+using System.IO;
+using Microsoft.AspNet.Identity;
 namespace Elearn.Controllers
 {
     public class PlaylistsController : Controller
@@ -46,10 +47,18 @@ namespace Elearn.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,Name,Description")] Playlist playlist)
+        public ActionResult Create(Playlist playlist, HttpPostedFileBase ImageFile)
         {
             if (ModelState.IsValid)
             {
+                if (ImageFile != null)
+                {
+                    string name = Path.GetFileName(ImageFile.FileName);
+                    string path = Path.Combine(Server.MapPath("~/images"), name);
+                    ImageFile.SaveAs(path);
+                    playlist.ImageFile = name;
+                }
+                playlist.ApplicationsUserId = User.Identity.GetUserId();
                 db.Playlists.Add(playlist);
                 db.SaveChanges();
                 return RedirectToAction("Index");
