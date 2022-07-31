@@ -76,7 +76,7 @@ namespace Elearn.Controllers
             {
                 return HttpNotFound();
             }
-            ViewBag.CategoryId = new SelectList(db.Categories, "Id", "Name", lecture.CategoryId);
+            
             ViewBag.PlaylistId = new SelectList(db.Playlists, "Id", "Name", lecture.PlaylistId);
             return View(lecture);
         }
