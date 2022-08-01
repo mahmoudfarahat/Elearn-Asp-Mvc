@@ -20,10 +20,11 @@
             <h3>@Html.DisplayNameFor(model => model.Description): </h3>
             <p>@Html.DisplayFor(model => model.Description)</p>
 
+           
 
         </div>
 
-
+    <p>@Html.HiddenFor(model => model.Id, new {@class = "PlaylistId" })</p>
 
      
     <div class="widget">
@@ -57,11 +58,6 @@
     <div class="modal-dialog" id="modalCotent">
        
 
-
-
-
-
-
     </div>
 </div>
 
@@ -79,16 +75,30 @@
 
  
     $(".btn-create").click(function () {
-
+        var id = $(".PlaylistId").val()
+         
         $.ajax({
-            url: "/Lectures/Create",
+            url: "/Lectures/Create/" + id,
             method: "GET",
-            success: function (result) {
+             success: function (result) {
                 $("#modalCotent").html(result);
                 $("#myModal").modal("show")
             }
         })
     })
+
+    //$(document).on("click", ".Create-lecture", function () {
+
+    //    $.ajax({
+    //        url: "/Lectures/Create",
+    //        method:"POST",
+
+    //    })
+
+    //}
+    //    )
+
+
 
 </script>
 

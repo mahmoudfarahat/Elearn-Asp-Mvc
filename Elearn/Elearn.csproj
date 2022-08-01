@@ -262,6 +262,7 @@
     <Folder Include="App_Data\" />
     <Folder Include="images\" />
     <Folder Include="obj\" />
+    <Folder Include="Videoes\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />

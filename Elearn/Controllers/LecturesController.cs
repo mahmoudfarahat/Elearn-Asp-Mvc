@@ -7,6 +7,7 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using Elearn.Models;
+using System.IO;
 
 namespace Elearn.Controllers
 {
@@ -37,30 +38,36 @@ namespace Elearn.Controllers
         }
 
         // GET: Lectures/Create
-        public ActionResult Create()
+        public ActionResult Create(int ID)
         {
            
             ViewBag.PlaylistId = new SelectList(db.Playlists, "Id", "Name");
-
-            return PartialView();
+            Lecture lecture = new Lecture();
+            lecture.PlaylistId = ID;
+            return PartialView(lecture);
         }
 
         // POST: Lectures/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,Title,VideoFile,Description,PlaylistId,CategoryId")] Lecture lecture)
+        public ActionResult Create(Lecture lecture, HttpPostedFileBase VideoFile)
         {
             if (ModelState.IsValid)
             {
+                if (VideoFile != null)
+                {
+                    string name = Path.GetFileName(VideoFile.FileName);
+                    string path = Path.Combine(Server.MapPath("~/Videoes"), name);
+                    VideoFile.SaveAs(path);
+                    lecture.VideoFile = name;
+                }
                 db.Videos.Add(lecture);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-
-            ViewBag.PlaylistId = new SelectList(db.Playlists, "Id", "Name", lecture.PlaylistId);
-            return View(lecture);
+         
+             return View(lecture);
         }
 
         // GET: Lectures/Edit/5
@@ -85,7 +92,7 @@ namespace Elearn.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,Title,VideoFile,Description,PlaylistId,CategoryId")] Lecture lecture)
+        public ActionResult Edit(Lecture lecture)
         {
             if (ModelState.IsValid)
             {
