@@ -39,7 +39,7 @@ namespace Elearn.Controllers
         // GET: Playlists/Create
         public ActionResult Create()
         {
-             
+            ViewBag.CategoryId = new SelectList(db.Categories, "Id", "Name");
             return View();
         }
 
@@ -60,6 +60,8 @@ namespace Elearn.Controllers
                     playlist.ImageFile = name;
                 }
                 playlist.ApplicationsUserId = User.Identity.GetUserId();
+                ViewBag.CategoryId = new SelectList(db.Categories, "Id", "Name", playlist.CategoryId);
+
                 db.Playlists.Add(playlist);
                 db.SaveChanges();
                 return RedirectToAction("Index");
@@ -88,7 +90,7 @@ namespace Elearn.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,Name,Description")] Playlist playlist)
+        public ActionResult Edit(  Playlist playlist)
         {
             if (ModelState.IsValid)
             {
@@ -96,6 +98,8 @@ namespace Elearn.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
+          ViewBag.CategoryId = new SelectList(db.Categories, "Id", "Name", playlist.CategoryId);
+
             return View(playlist);
         }
 

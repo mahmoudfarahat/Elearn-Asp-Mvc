@@ -17,10 +17,7 @@ namespace Elearn.Models
         public int PlaylistId { get; set; }
         public Playlist Playlist { get; set; }
  
-        [ForeignKey("Category")]
-        public int CategoryId { get; set; }
-
-        public Category Category { get; set; }
+      
 
      
     }

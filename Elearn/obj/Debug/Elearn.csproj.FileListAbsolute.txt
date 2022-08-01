@@ -55,3 +55,4 @@ C:\Users\mahmoud.farahat\documents\visual studio 2013\Projects\Elearn\Elearn\obj
 C:\Users\mahmoud.farahat\documents\visual studio 2013\Projects\Elearn\Elearn\obj\Debug\Elearn.pdb
 C:\Users\mahmoud.farahat\documents\visual studio 2013\Projects\Elearn\Elearn\obj\Debug\Elearn.Migrations.initalMigration.resources
 C:\Users\mahmoud.farahat\documents\visual studio 2013\Projects\Elearn\Elearn\obj\Debug\Elearn.csproj.GenerateResource.Cache
+C:\Users\mahmoud.farahat\Documents\Visual Studio 2013\Projects\Elearn\Elearn\obj\Debug\Elearn.Migrations.addCatergorytoplaylist.resources

@@ -17,7 +17,7 @@ namespace Elearn.Controllers
         // GET: Lectures
         public ActionResult Index()
         {
-            var videos = db.Videos.Include(l => l.Category).Include(l => l.Playlist);
+            var videos = db.Videos.Include(l => l.Playlist);
             return View(videos.ToList());
         }
 
@@ -39,7 +39,7 @@ namespace Elearn.Controllers
         // GET: Lectures/Create
         public ActionResult Create()
         {
-            ViewBag.CategoryId = new SelectList(db.Categories, "Id", "Name");
+           
             ViewBag.PlaylistId = new SelectList(db.Playlists, "Id", "Name");
 
             return PartialView();
@@ -59,7 +59,6 @@ namespace Elearn.Controllers
                 return RedirectToAction("Index");
             }
 
-            ViewBag.CategoryId = new SelectList(db.Categories, "Id", "Name", lecture.CategoryId);
             ViewBag.PlaylistId = new SelectList(db.Playlists, "Id", "Name", lecture.PlaylistId);
             return View(lecture);
         }
@@ -94,7 +93,6 @@ namespace Elearn.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.CategoryId = new SelectList(db.Categories, "Id", "Name", lecture.CategoryId);
             ViewBag.PlaylistId = new SelectList(db.Playlists, "Id", "Name", lecture.PlaylistId);
             return View(lecture);
         }

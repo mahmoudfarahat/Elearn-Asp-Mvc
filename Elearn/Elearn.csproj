@@ -172,6 +172,10 @@
     <Compile Include="Migrations\202207311124155_initalMigration.Designer.cs">
       <DependentUpon>202207311124155_initalMigration.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202208010912418_addCatergorytoplaylist.cs" />
+    <Compile Include="Migrations\202208010912418_addCatergorytoplaylist.Designer.cs">
+      <DependentUpon>202208010912418_addCatergorytoplaylist.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Category.cs" />
@@ -269,6 +273,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\202207311124155_initalMigration.resx">
       <DependentUpon>202207311124155_initalMigration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202208010912418_addCatergorytoplaylist.resx">
+      <DependentUpon>202208010912418_addCatergorytoplaylist.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
