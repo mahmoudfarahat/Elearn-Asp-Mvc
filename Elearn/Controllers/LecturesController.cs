@@ -64,7 +64,8 @@ namespace Elearn.Controllers
                 }
                 db.Videos.Add(lecture);
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                 
+                return RedirectToAction("Details", "playlists",new { id = lecture.PlaylistId });
             }
          
              return View(lecture);
